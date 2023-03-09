@@ -4,11 +4,27 @@ import Express from 'express'
     
     const app = await Express();
     
-    app.get('/', (req, res) => {
-        res.send('Hello World!')
-    })    
+    app.use(Express.text())
     
-    app.listen('8080', () => {
-        console.log(`333chat listening on port ...`)
+    const messages = []
+
+    app.post('/send', (req, res) => {
+        messages.push(req.body)
+
+        res.json({
+            status: 200,
+            message: 'Message successfully sent'
+        })
+    })
+
+    app.get('/fetch', (req, res) => {
+        const ip = req.ip;
+        res.send(messages.join('\n' + ip.replace('::ffff:', '') + ' > '))
+    })
+
+    app.listen(8080, () => {
+        console.log('Running on http://localhost:8080')
     })
 })()
+
+
