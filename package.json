@@ -6,10 +6,11 @@
   "author": "UsboKirishima <usbertibox@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "client": "node dist/client/index",
-    "rest": "node dist/rest/index",
-    "build": "tsc",
-    "build:watch": "tsc --watch"
+    "client": "chmod +x packages/client/client.sh && ./packages/client/client.sh",
+    "rest": "node dist/index",
+    "build": "rm -r dist && tsc",
+    "build:watch": "rm -r dist && tsc && tsc --watch",
+    "test": "python packages/client/decryption.py"
   },
   "dependencies": {
     "@types/axios": "^0.14.0",
