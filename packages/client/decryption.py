@@ -1,5 +1,8 @@
 import sys
 
+#This part of code is made by https://github.com/LunarStone292/
+#All right reserved to @LunarStone292
+#Sincerely, UsboKirishima
 
 def decrypt_file(message):
     try:
