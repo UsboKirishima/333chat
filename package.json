@@ -10,7 +10,8 @@
     "rest": "node dist/index",
     "build": "rm -r dist && tsc",
     "build:watch": "rm -r dist && tsc && tsc --watch",
-    "test": "python packages/client/decryption.py"
+    "test": "python packages/client/decryption.py",
+    "start": "yarn rest"
   },
   "dependencies": {
     "@types/axios": "^0.14.0",

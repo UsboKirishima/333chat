@@ -20,10 +20,8 @@ import Express from 'express'
         res.send(messages.join('\n'))
     })
 
-    app.listen(8080, () => {
-        console.log('Running on http://localhost:8080')
+    app.listen(3000, () => {
+        console.log('Running on http://localhost:3000')
     })
     
 })()
-
-
